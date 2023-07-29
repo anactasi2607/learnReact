@@ -1,0 +1,11 @@
+.button {
+  font-size: 14px;
+
+  padding: 4px 16px;
+
+  cursor: pointer;
+
+  color: teal;
+  border: 1px solid teal;
+  background-color: white;
+}

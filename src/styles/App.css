@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 1024px;
+  padding: 16px;
+}
+
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 16px;
+  padding: 12px;
+
+  border: 2px solid teal;
+}
+
+.post-form {
+  padding: 16px;
+
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+.post-form__row:not(:first-child) {
+  margin-top: 12px;
+}
+
+.title {
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+}
+
+.border {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
