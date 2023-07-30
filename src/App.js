@@ -3,6 +3,8 @@ import React, {useMemo, useState} from 'react';
 import PostFilter from './components/PostFilter';
 import PostForm from './components/PostForm';
 import PostList from './components/PostList';
+import BaseButton from './components/UI/button/BaseButton';
+import BaseModal from './components/UI/modal/BaseModal';
 
 import './styles/App.css';
 
@@ -14,6 +16,7 @@ function App() {
     {id: 4, title: 'Б Javascript 4', body: 'А Текст поста длинный'},
   ])
   const [filter, setFilter] = useState({sort: '', query: ''});
+  const [modal, setModal] = useState(false);
 
   const sortedPosts = useMemo(() => {
     if (filter.sort) {
@@ -29,6 +32,7 @@ function App() {
 
   function createNewPost(post) {
     setPosts([...posts, {...post, id: Date.now()}]);
+    setModal(false);
   }
 
   function removePost(post) {
@@ -37,7 +41,11 @@ function App() {
 
   return (
     <div className="App">
-      <PostForm create={createNewPost} remove={removePost} />
+      <BaseModal visible={modal} setVisible={setModal}>
+        <PostForm create={createNewPost} remove={removePost} />
+      </BaseModal>
+
+      <BaseButton onClick={() => setModal(true)}>создать пост</BaseButton>
 
       <hr className="border"/>
 

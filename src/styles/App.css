@@ -25,13 +25,6 @@
   border: 2px solid teal;
 }
 
-.post-form {
-  padding: 16px;
-
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-}
-
 .post-form__row:not(:first-child) {
   margin-top: 12px;
 }
