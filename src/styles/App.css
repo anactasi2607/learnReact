@@ -60,3 +60,28 @@
   margin-bottom: 16px;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+
+  padding: 70px;
+}
+
+.pagination {
+  display: flex;
+
+  margin-top: 24px;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.pagination__item {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.pagination__item--current {
+  font-weight: bold;
+
+  border: 2px solid orange;
+}

@@ -2,8 +2,11 @@ import React from 'react';
 import classes from './BaseButton.module.css'
 
 const BaseButton = ({children, ...props}) => {
+  const {customClasses, ...prepareProps} = props;
+  const rootClasses = [classes.button, customClasses];
+
   return (
-    <button {...props} className={classes.button}>
+    <button {...prepareProps} className={rootClasses.join(' ')}>
       {children}
     </button>
   );
