@@ -26,6 +26,14 @@
   border: 2px solid teal;
 }
 
+.post__actions {
+  display: flex;
+}
+
+.post__action:not(:first-child) {
+  margin-left: 8px;
+}
+
 .post-form__row:not(:first-child) {
   margin-top: 12px;
 }
