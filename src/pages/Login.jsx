@@ -13,15 +13,21 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Страница авторизации</h1>
 
-      <form onSubmit={submit}>
-        <BaseInput type="text" placeholder="Введите логин" />
+      <form className="login-form" onSubmit={submit}>
+        <div className="login-form__row">
+          <BaseInput type="text" placeholder="Введите логин" />
+        </div>
 
-        <BaseInput type="password" placeholder="Введите пароль" />
+        <div className="login-form__row">
+          <BaseInput type="password" placeholder="Введите пароль" />
+        </div>
 
-        <BaseButton>Войти</BaseButton>
+        <div className="login-form__row">
+          <BaseButton>Войти</BaseButton>
+        </div>
       </form>
     </div>
   );

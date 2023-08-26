@@ -14,14 +14,14 @@ const PostDetail = () => {
   const [post, setPost] = useState({});
   const [postComments, setPostComments] = useState([]);
 
-  const [fetchPostById, isLoading, error] = useFetching(async(id) => {
+  const [fetchPostById, isLoading] = useFetching(async(id) => {
     const response = await PostService.getPostById(id);
     setPost(response.data);
   });
 
-  const [fetchPostComments, isPostCommentsLoading, postCommentsError] = useFetching(async(id) => {
-    console.log('fetchPostComments');
+  const [fetchPostComments, isPostCommentsLoading] = useFetching(async(id) => {
     const response = await PostService.getPostCommentsById(id);
+
     setPostComments(response.data);
   });
 
@@ -31,7 +31,7 @@ const PostDetail = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h1>Вы открыли страницу поста с ID {params.id}</h1>
 
       {isLoading

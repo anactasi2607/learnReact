@@ -5,22 +5,26 @@ import BaseSelect from './UI/select/BaseSelect';
 
 const PostFilter = ({filter, setFilter}) => {
   return (
-    <div>
-      <BaseInput
-        value={filter.query}
-        placeholder="Поиск..."
-        onChange={event => setFilter({...filter, query: event.target.value})}
-      />
+    <div className="filter">
+      <div className="filter__row">
+        <BaseInput
+          value={filter.query}
+          placeholder="Поиск..."
+          onChange={event => setFilter({...filter, query: event.target.value})}
+        />
+      </div>
 
-      <BaseSelect
-        value={filter.sort}
-        defaultValue="Сортировка"
-        options={[
-          {value: 'title', name: 'По названию'},
-          {value: 'body', name: 'По описанию'},
-        ]}
-        onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
-      />
+      <div className="filter__row">
+        <BaseSelect
+          value={filter.sort}
+          defaultValue="Сортировка"
+          options={[
+            {value: 'title', name: 'По названию'},
+            {value: 'body', name: 'По описанию'},
+          ]}
+          onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+        />
+      </div>
     </div>
   );
 }

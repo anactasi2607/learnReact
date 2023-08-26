@@ -60,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="container">
       <BaseModal visible={modal} setVisible={setModal}>
         <PostForm create={createNewPost} remove={removePost} />
       </BaseModal>
